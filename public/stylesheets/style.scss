@@ -32,7 +32,30 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
+  width: 16%;
+}
+
+h1 {
+  font-size: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  align-content: center;
+  font-size: 3cm;
+  text-shadow: #c2f54c;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  align-content: center;
+  font-size: 1cm;
+  text-shadow: #c2f54c;
 }
 h2 {
   font-size: 40px;
@@ -58,6 +81,10 @@ h2 {
   align-content: center;
   align-items: center;
   border-radius: 4px;
+  background-color: rgba(215, 247, 194, 0.4);
+  max-width: 70%;
+  margin: auto;
+  padding: 40px;
 }
 .formsection input {
   margin-top: 10px;
