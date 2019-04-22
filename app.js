@@ -48,6 +48,8 @@ app.use(cookieParser());
 
 // );
 
+//app.use("/home.hbs", require("./routes/site-routes.js"));
+
 app.use(
   session({
     secret: "basic-auth-secret",

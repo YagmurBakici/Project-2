@@ -29,7 +29,7 @@ router.post("/login", (req, res, next) => {
       if (bcrypt.compareSync(password, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
-        res.redirect("home.hbs");
+        res.render("home.hbs");
       } else {
         res.render("login.hbs", {
           errorMessage: "Incorrect password"
@@ -90,6 +90,21 @@ router.post("/signup", (req, res, next) => {
       })
       .catch(err => console.log(err));
   });
+});
+
+router.use((req, res, next) => {
+  if (req.session.currentUser) {
+    // <== if there's user in the session (user is logged in)
+    next(); // ==> go to the next route ---
+  } else {
+    //    |
+    res.redirect("/login"); //    |
+  } //    |
+}); // ------------------------------------
+//     |
+//     V
+router.get("/home", (req, res, next) => {
+  res.render("home.hbs");
 });
 
 module.exports = router;
