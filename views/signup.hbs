@@ -1,41 +1,46 @@
 <div class="container1">
   <form action="/signup" method="POST" id="form-container">
-    <section id="signup">
-      <div class="signup_main">
+    <div class="formsection">
 
-        <h2>Sign Up</h2>
-        <label for="name">Name:</label>
-        <input id="name" type="text" name="username" placeholder="Your name" required>
+      <h2>Sign Up</h2>
 
-        <label for="surname">Surname:</label>
-        <input id="surname" type="text" name="surname" placeholder="Your surname" required>
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="username" placeholder="Your name" required>
 
-        <label for="email">Email:</label>
-        <input id="email" type="email" name="email" placeholder="Your email" required>
+      <label for="surname">Surname:</label>
+      <input id="surname" type="text" name="surname" placeholder="Your surname" required>
 
-        <label for="nationality">Nationality:</label>
-        <input id="nationality" type="text" name="nationality" placeholder="Your nationality" required>
+      <label for="email">Email:</label>
+      <input id="email" type="email" name="email" placeholder="Your email" required>
+
+      <label for="nationality">Nationality:</label>
+      <input id="nationality" type="text" name="nationality" placeholder="Your nationality" required>
 
 
-        <label for="password">Password:</label>
-        <input id="password" type="password" name="password" placeholder="Create a password" required>
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="password" placeholder="Create a password" required>
 
-        {{#if message}}
-        <div class="error-message">{{ message }}</div>
-        {{/if}}
-        <br><br>
 
-        <button class="signupButton">Create account</button>
+      {{#if message}}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <br><br>
 
-        <p class="account-message">
-          Do you already have an account? <br> You can:
-          <a href="/login">Login</a>
-        </p>
-      </div>
+
+
+      {{!-- <button class="btns">Create Account</button> --}}
+
+      <a class="btns" href="/signup">Create account</a>
+
+      <p class="account-message">
+        Do you already have an account? <br> You can:
+        <a href="/login" class="btns">Log In</a>
+
+      </p>
+    </div>
     </section>
   </form>
-
-  {{#if errorMessage}}
-  <div class="error-message">{{ errorMessage }}</div>
-  {{/if}}
 </div>
+{{#if errorMessage}}
+<div class="error-message">{{ errorMessage }}</div>
+{{/if}}

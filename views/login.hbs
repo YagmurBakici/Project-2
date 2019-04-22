@@ -1,30 +1,27 @@
 <div class="container1">
 
   <form action="/login" method="POST">
-    <section id="login">
-      <div class="login_main">
+    <div class="formsection">
 
-        <h2>Log In</h2>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        {{!-- //required is to oblige people to write --}}
+      <h2>Log In</h2>
+      <label for="email">Email:</label>
+      <input type="email" name="email" required>
+      {{!-- //required is to oblige people to write --}}
 
-        <div>
-          <label for="password">Password:</label>
-          <input type="password" name="password" required>
-        </div>
 
-        {{#if errorMessage}}
-        <div class="error-message">{{ errorMessage }}</div>
-        {{/if}}
+      <label for="password">Password:</label> <br>
+      <input type="password" name="password" required>
 
-        <div>
-          <input class="loginButton" type="submit" value="Log In">
-        </div>
-        <p class="account-message">Don't have an account?
-          <a href="/signup">SignUp</a>
-        </p>
-      </div>
-    </section>
+
+
+      <a class="btns" href="/login">Log In</a>
+
+      <p class="account-message">Don't have an account?
+        <a href="/signup" class="btns">SignUp</a>
+      </p>
+    </div>
   </form>
+  {{#if errorMessage}}
+  <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
 </div>
