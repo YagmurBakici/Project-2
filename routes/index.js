@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+// // User model
+const User = require("../models/user");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -24,12 +26,12 @@ router.get("/signup", (req, res, next) => {
   res.render("signup.hbs");
 });
 
-router.post("/login", (req, res, next) => {
+router.post("/signup", (req, res, next) => {
   const { name, surname, newpassword } = req.body;
   User.create({ name, surname, newpassword })
     .then(signedup => {
       console.log(signedup);
-      res.redirect("/home");
+      res.redirect("/login");
     })
     .catch(err => next(err));
 });
