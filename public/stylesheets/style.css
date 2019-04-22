@@ -1,26 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
 * {
-  margin: 0%;
-  color: blue; }
+  margin: 0%; }
 
 body,
 html {
   height: 100%; }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Varela Round", sans-serif; }
 
 .container1 {
   background-image: url("../images/p.jpg");
   height: 100%;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.containerlanding {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
 
 .logo1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%; }
+  width: 30%; }
+
+h2 {
+  font-size: 40px;
+  margin: 30px; }
+
+.login_main {
+  font-size: 17px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: inherit; }
+
+.signup_main {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  border-radius: 4px; }
+
+form input {
+  margin-top: 10px;
+  width: 30%; }
+
+form label {
+  margin-top: 10px; }
 
 .myButton {
   display: flex;
@@ -30,12 +68,11 @@ body {
   align-content: center; }
 
 .signup {
-  color: white;
   -moz-box-shadow: inset 0px 1px 0px 0px #a4e271;
   -webkit-box-shadow: inset 0px 1px 0px 0px #a4e271;
   box-shadow: inset 0px 1px 0px 0px #a4e271;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
-  background: -moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+  background: -moz-linear-gradient(top, #89c403 5%, #c1c403 100%);
   background: -webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
   background: -o-linear-gradient(top, #89c403 5%, #77a809 100%);
   background: -ms-linear-gradient(top, #89c403 5%, #77a809 100%);
@@ -49,7 +86,6 @@ body {
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
   font-size: 15px;
   font-weight: bold;
   padding: 6px 24px;
@@ -58,10 +94,10 @@ body {
 
 .signup:hover {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
-  background: -moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+  background: -moz-linear-gradient(top, #77a809 5%, #c1c403 100%);
   background: -webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
   background: -o-linear-gradient(top, #77a809 5%, #89c403 100%);
-  background: -ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+  background: -ms-linear-gradient(top, #77a809 5%, #aedf3d 100%);
   background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
   background-color: #77a809; }
@@ -70,8 +106,11 @@ body {
   position: relative;
   top: 1px; }
 
+.signup:focus {
+  background: orange;
+  border-color: orange; }
+
 .login {
-  color: white;
   -moz-box-shadow: inset 0px 1px 0px 0px #a4e271;
   -webkit-box-shadow: inset 0px 1px 0px 0px #a4e271;
   box-shadow: inset 0px 1px 0px 0px #a4e271;
@@ -79,7 +118,7 @@ body {
   background: -moz-linear-gradient(top, #89c403 5%, #77a809 100%);
   background: -webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
   background: -o-linear-gradient(top, #89c403 5%, #77a809 100%);
-  background: -ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+  background: -ms-linear-gradient(top, #89c403 5%, #aedf3d 100%);
   background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
   background-color: #89c403;
@@ -90,7 +129,6 @@ body {
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
   font-size: 15px;
   font-weight: bold;
   padding: 6px 24px;
@@ -111,6 +149,10 @@ body {
   position: relative;
   top: 1px; }
 
+.login:focus {
+  background: orange;
+  border-color: orange; }
+
 .error-message {
   background: #f02b63;
   box-sizing: border-box;
@@ -118,6 +160,28 @@ body {
   margin: 20px auto;
   padding: 20px;
   width: 100%; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px; }
+
+.form label {
+  margin: 10px 0; }
+
+.form input {
+  outline: none;
+  padding: 3px 0 3px 20px; }
+
+.form input,
+.form select {
+  border: 1px solid darkslategray;
+  border-radius: 0.3rem;
+  margin-bottom: 8px;
+  height: 35px; }
+
+.form .btn {
+  margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */
 

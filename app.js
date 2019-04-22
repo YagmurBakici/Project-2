@@ -36,17 +36,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Express View engine setup
+// Express View engine setup- and relate scss and css
 
-// app.use(
-//   require("node-sass-middleware")({
-//     src: path.join(__dirname, "public"),
-//     dest: path.join(__dirname, "public"),
-//     sourceMap: true
-
-//   })
-
-// );
+app.use(
+  require("node-sass-middleware")({
+    src: path.join(__dirname, "public"),
+    dest: path.join(__dirname, "public"),
+    sourceMap: true
+  })
+);
 
 //app.use("/home.hbs", require("./routes/site-routes.js"));
 
@@ -71,6 +69,9 @@ app.locals.title = "Express - Generated with IronGenerator";
 
 const index = require("./routes/index");
 app.use("/", index);
+
+const authroutes = require("./routes/auth-routes");
+app.use("/", authroutes);
 
 app.listen(3000);
 module.exports = app;
