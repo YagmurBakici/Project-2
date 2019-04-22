@@ -17,11 +17,24 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  const { username, password } = req.body;
-  User.create({ username, password })
-    .then(logged => {
-      console.log(logged);
-      res.redirect("/home");
+  const { email, password } = req.body;
+  User.findOne({ email })
+    .then(user => {
+      if (!user) {
+        res.render("login.hbs", {
+          errorMessage: "The email doesn't exist."
+        });
+        return;
+      }
+      if (bcrypt.compareSync(password, user.password)) {
+        // Save the login in the session!
+        req.session.currentUser = user;
+        res.redirect("home.hbs");
+      } else {
+        res.render("login.hbs", {
+          errorMessage: "Incorrect password"
+        });
+      }
     })
     .catch(err => next(err));
 });

@@ -3,16 +3,17 @@
     <div class="login_main">
 
       <h2>Log In</h2>
-      <label for="username">Username:</label>
-      <input type="text" name="username">
+      <label for="email">Email:</label>
+      <input type="email" name="email" required>
+      {{!-- //required is to oblige people to write --}}
 
       <div>
         <label for="password">Password:</label>
-        <input type="password" name="password">
+        <input type="password" name="password" required>
       </div>
 
-      {{#if message}}
-      <div class="error-message">{{ message }}</div>
+      {{#if errorMessage}}
+      <div class="error-message">{{ errorMessage }}</div>
       {{/if}}
 
       <div>

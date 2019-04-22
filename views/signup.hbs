@@ -4,20 +4,20 @@
 
       <h2>SignUp</h2>
       <label for="name">Username:</label>
-      <input id="name" type="text" name="username" placeholder="Your name">
+      <input id="name" type="text" name="username" placeholder="Your name" required>
 
       <label for="surname">Surname:</label>
-      <input id="surname" type="text" name="surname" placeholder="Your surname">
+      <input id="surname" type="text" name="surname" placeholder="Your surname" required>
 
       <label for="email">Email:</label>
-      <input id="email" type="email" name="email" placeholder="Your email">
+      <input id="email" type="email" name="email" placeholder="Your email" required>
 
       <label for="nationality">Nationality:</label>
-      <input id="nationality" type="text" name="nationality" placeholder="Your nationality">
+      <input id="nationality" type="text" name="nationality" placeholder="Your nationality" required>
 
 
       <label for="password">Password:</label>
-      <input id="password" type="password" name="password" placeholder="Create a password">
+      <input id="password" type="password" name="password" placeholder="Create a password" required>
 
       {{#if message}}
       <div class="error-message">{{ message }}</div>
