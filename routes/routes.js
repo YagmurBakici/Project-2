@@ -3,7 +3,7 @@
 // const passport = require("passport");
 // const flash = require("connect-flash");
 // const ensureLogin = require("connect-ensure-login");
-// //const router  = express.Router();
+// // const router  = express.Router();
 
 // // User model
 // const User = require("../models/user");
@@ -29,7 +29,7 @@
 //   User.findOne({ username })
 //     .then(user => {
 //       if (user !== null) {
-//         res.render("auth-signup", { message: "The username already exists" });
+//         res.render("/signup", { message: "The username already exists" });
 //         return;
 //       }
 
