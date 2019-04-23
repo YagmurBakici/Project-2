@@ -23,3 +23,32 @@
   </a>
 
 </nav>
+{<table id="board_user" class="board">
+  <thead class="head">
+    <tr class="row">
+      <th class="cell">username</th>
+      <th class="cell">surname</th>
+      <th class="cell">email</th>
+      <th class="cell">Nationality</th>
+      <th class="cell">delete</th>
+    </tr>
+  </thead>
+  <tbody class="body">
+    {{#each users }}
+    <tr id="user_{{this._id}}" class="row">
+      <td class="cell">{{ this.username }}</td>
+      <td class="cell">{{ this.surname }}</td>
+      <td class="cell">{{ this.email }}</td>
+      <td class="cell">{{ this.nationality }}</td>
+      <td class="cell">
+        <a href="/users/delete/{{this._id}}" class="delete btn">X</a>
+        {{!-- <button class="delete btn" data-user-id="{{this._id}}">X</button> --}}
+      </td>
+    </tr>
+    {{else}}
+    <tr class="row">
+      <td colspan="7" class="cell row-empty">no users yet</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

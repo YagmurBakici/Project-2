@@ -10,7 +10,7 @@ const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-// const router= require ("./routes/auth")
+const router = require("./routes/admin_routes");
 
 mongoose
   .connect("mongodb://localhost/project2", { useNewUrlParser: true })
@@ -73,5 +73,7 @@ app.use("/", index);
 const authroutes = require("./routes/auth-routes");
 app.use("/", authroutes);
 
-app.listen(3000);
+const adminRouter = require("./routes/admin_routes");
+app.use(adminRouter);
+
 module.exports = app;
