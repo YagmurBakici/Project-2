@@ -21,6 +21,12 @@ router.post("/login", (req, res, next) => {
         });
         return;
       }
+      if (password === "admin" && email === "admin@admin.com") {
+        console.log("567 ey admin");
+        req.session.currentUser = user;
+        res.redirect("/admin-panel");
+        return;
+      }
       if (bcrypt.compareSync(password, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
@@ -39,6 +45,7 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
+  console.log(234);
   // const name = req.body.username;
   // const surname = req.body.surname;
   // const password = req.body.password;
@@ -100,6 +107,20 @@ router.use((req, res, next) => {
 //     V
 router.get("/home", (req, res, next) => {
   res.render("home.hbs");
+});
+
+router.get("/admin-panel", (req, res, next) => {
+  res.render("admin-panel.hbs");
+});
+
+router.get("/admin-panel/users", (req, res, next) => {
+  res.render("users.hbs");
+});
+router.get("/admin-panel/points", (req, res, next) => {
+  res.render("points.hbs");
+});
+router.get("/admin-panel/routes", (req, res, next) => {
+  res.render("routes.hbs");
 });
 
 router.get("/logout", (req, res, next) => {
