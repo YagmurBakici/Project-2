@@ -76,4 +76,7 @@ app.use("/", authroutes);
 const adminRouter = require("./routes/admin_routes");
 app.use(adminRouter);
 
+const adminPoints = require("./routes/admin_points");
+app.use(adminPoints);
+
 module.exports = app;
