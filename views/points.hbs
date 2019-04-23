@@ -45,15 +45,13 @@
       </span> --}}
       Routes
     </a>
-
   </nav>
-
   <div id="map"></div>
-
   <script>
+    var idPlace = 0;
     function initMap() {
       var myLatlng = { lat: 48.8606, lng: 2.3376 };
-      var map = new google.maps.Map(document.getElementById('map'), {
+      var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 13,
         center: myLatlng
       });
@@ -75,8 +73,9 @@
         map.setZoom(17);
         map.setCenter(marker.getPosition());
       });
-
       var clickHandler = new ClickEventHandler(map, origin);
+      var geocoder = new google.maps.Geocoder;
+      var infowindow = new google.maps.InfoWindow;
     }
 
     /**
@@ -92,43 +91,45 @@
       this.infowindow = new google.maps.InfoWindow;
       this.infowindowContent = document.getElementById('infowindow-content');
       this.infowindow.setContent(this.infowindowContent);
-
       // Listen for clicks on the map.
       this.map.addListener('click', this.handleClick.bind(this));
-
     };
 
     ClickEventHandler.prototype.handleClick = function (event) {
-      console.log(event.placeId);
+      console.log("this place id", event.placeId, event);
       // If the event has a placeId, use it.
+      idPlace = event.placeId;
       if (event.placeId) {
         console.log('You clicked on place:' + event.placeId);
-
+        console.log("this is the place ID");
         // Calling e.stop() on the event prevents the default info window from
         // showing.
         // If you call stop here when there is no placeId you will prevent some
         // other map click event handlers from receiving the event.
+
         event.stop();
-        this.getPlaceInformation(event.placeId);
+        //this.getPlaceInformation(event.placeId);
       }
     };
 
-    ClickEventHandler.prototype.getPlaceInformation = function (placeId) {
-      var me = this;
-      return console.log(this)
-      this.placesService.getDetails({ placeId: placeId }, function (place, status) {
-        if (status === 'OK') {
-          me.infowindow.close();
-          me.infowindow.setPosition(place.geometry.location);
-          me.infowindowContent.children['place-icon'].src = place.icon;
-          me.infowindowContent.children['place-name'].textContent = place.name;
-          me.infowindowContent.children['place-id'].textContent = place.place_id;
-          me.infowindowContent.children['place-address'].textContent =
-            place.formatted_address;
-          me.infowindow.open(me.map);
-        }
-      });
-    };
+    //ClickEventHandler.prototype.getPlaceInformation = function (placeId) {
+    //var me = this;
+    //console.log(this, "ey status poiınt OK")
+    //this.placesService.getDetails({ placeId: placeId }, function (place, status) {
+    //if (status === 'OK') {
+    //console.log("status ok ın ")
+    //me.infowindow.close();
+    //me.infowindow.setPosition(place.geometry.location);
+    //me.infowindowContent.children['place-icon'].src = place.icon;
+    //me.infowindowContent.children['place-name'].textContent = place.name;
+    //me.infowindowContent.children['place-id'].textContent = place.place_id;
+    //me.infowindowContent.children['place-address'].textContent =
+    // place.formatted_address;
+    //me.infowindow.open(me.map);
+    // }
+    //});
+    //};
+    console.log(" the valueeeee " + idPlace)
   </script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIbJUg6J8QqqQuMI899bZdrtum8VAZnSc&libraries=places&callback=initMap">
   </script>

@@ -287,6 +287,13 @@ form label {
   transform: scale(1.5);
   cursor: pointer; }
 
+.adminPanel {
+  font-size: 30px;
+  font: 14px "Varela Round", sans-serif;
+  color: green;
+  display: flex;
+  justify-content: space-between; }
+
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
