@@ -1,5 +1,5 @@
-  <a class="logouttext" href="/logout">Logout</a>
-  <html>
+<a class="logouttext" href="/logout">Logout</a>
+<html>
 <h2>Select Points to add in DB</h2>
 
 <head>
@@ -96,7 +96,7 @@
       if (event.placeId) {
         console.log('You clicked on place:');
         console.log(event);
-      
+
         console.log("this is the place ID");
         // Calling e.stop() on the event prevents the default info window from
         // showing.
@@ -109,11 +109,12 @@
           console.log("map", placeDetails)
           var latLng = {
             lat: placeDetails.geometry.location.lat(),
-            lng:placeDetails.geometry.location.lng()
+            lng: placeDetails.geometry.location.lng()
           };
-          latLng = JSON.stringify(latLng);
+          console.log("there are our fucking coordenates ", latLng)
+          //latLng = JSON.stringify(latLng); 
 
-          const { place_id, name, rating, types, website, address_components } = placeDetails;
+          const { place_id, name, rating, types, website, address_components, } = placeDetails;
           const answer = window.prompt("save in db ? (y/n)")
           if (answer === "y") sendToServer({ place_id, name, rating, types, website, address_components, latLng });
         });

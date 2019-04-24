@@ -371,6 +371,31 @@ body {
 .board .row-empty {
   text-align: center; }
 
+.card {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  background: #eee;
+  margin: 15px;
+  max-width: 1300px;
+  height: 33%; }
+
+.card-content {
+  position: relative;
+  max-width: 50%;
+  background-color: rgba(44, 187, 8, 0.2); }
+  .card-content h3,
+  .card-content p {
+    max-width: calc(100% - 30px);
+    padding-left: 30px; }
+
+.card-image {
+  position: relative;
+  width: 10px;
+  height: 20px; }
+
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

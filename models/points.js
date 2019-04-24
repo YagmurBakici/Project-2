@@ -10,7 +10,7 @@ const pointSchema = new Schema(
     types: { type: Array },
     website: { type: String },
     address_components: { type: Object },
-    latLng: { type: String }
+    latLng: { type: Object }
   }
   //{
   // timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
