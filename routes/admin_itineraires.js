@@ -18,7 +18,7 @@ adminRouter.post("/create-route", (req, res) => {
     });
 });
 
-// //To show the points
+// //To show the routes
 // adminRouter.get("/admin-panel/points_manage", (req, res) => {
 //   // return res.send("here");
 
@@ -40,26 +40,24 @@ adminRouter.post("/create-route", (req, res) => {
 //     });
 // });
 
-// //To send the points to the create routes page
-// adminRouter.get("/admin-panel/routes", (req, res) => {
-//   // return res.send("here");
-//   Point.find({})
-//     .then(points => {
-//       // console.log(points, "gogogogogogo");
+//To send the routes to the display routes page
+adminRouter.get("/users_routes", (req, res) => {
+  // return res.send("here");
+  Route.find({})
+    .then(routes => {
+      // console.log(points, "gogogogogogo");
 
-//       // console.log("The received data from the DB: ", points);
-//       const data = {
-//         points
-//       };
-//       // console.log(data.points, "data");
+      // console.log("The received data from the DB: ", points);
 
-//       res.render("routes.hbs", { data: data.points });
-//     })
-//     .catch(err => {
-//       console.log("nay", err);
-//       console.log("The error while searching points occurred: ", err);
-//     });
-// });
+      // console.log(data.points, "data");
+
+      res.render("users_routes.hbs", routes);
+    })
+    .catch(err => {
+      console.log("nay", err);
+      console.log("The error while searching points occurred: ", err);
+    });
+});
 
 // //to delete points
 // adminRouter.get("/points/delete/:id", (req, res) => {
