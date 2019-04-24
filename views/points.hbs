@@ -1,25 +1,12 @@
-<html>
+  <a class="logouttext" href="/logout">Logout</a>
+  <html>
+<h2>Select Points to add in DB</h2>
 
 <head>
   <title>Simple Click Events</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-  <style>
-    /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-    #map {
-      height: 100%;
-    }
-
-    /* Optional: Makes the sample page fill the window. */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
 </head>
 
 <body>
@@ -109,6 +96,7 @@
       if (event.placeId) {
         console.log('You clicked on place:');
         console.log(event);
+      
         console.log("this is the place ID");
         // Calling e.stop() on the event prevents the default info window from
         // showing.
@@ -119,9 +107,15 @@
         this.getPlaceInformation(event.placeId, function (placeDetails) {
           console.log("status ok ın ", map)
           console.log("map", placeDetails)
+          var latLng = {
+            lat: placeDetails.geometry.location.lat(),
+            lng:placeDetails.geometry.location.lng()
+          };
+          latLng = JSON.stringify(latLng);
+
           const { place_id, name, rating, types, website, address_components } = placeDetails;
           const answer = window.prompt("save in db ? (y/n)")
-          if (answer === "y") sendToServer({ place_id, name, rating, types, website, address_components });
+          if (answer === "y") sendToServer({ place_id, name, rating, types, website, address_components, latLng });
         });
       }
     };

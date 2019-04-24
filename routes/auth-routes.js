@@ -119,9 +119,9 @@ router.get("/admin-panel", (req, res, next) => {
 router.get("/admin-panel/points", (req, res, next) => {
   res.render("points.hbs");
 });
-router.get("/admin-panel/routes", (req, res, next) => {
-  res.render("routes.hbs");
-});
+// router.get("/admin-panel/routes", (req, res, next) => {
+//   res.render("routes.hbs");
+// });
 // router.get("/admin-panel/points_manage", (req, res, next) => {
 //   res.render("points_manage.hbs");
 // });

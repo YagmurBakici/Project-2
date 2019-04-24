@@ -1,4 +1,5 @@
-<h4>Points management</h4>
+  <a class="logouttext" href="/logout">Logout</a>
+<h2>Points management</h2>
 <nav id="nav_dashboard">
   <a href="/admin-panel/users" class="link">
     {{!-- <span class="btn icon" title="Manage user">
@@ -30,7 +31,7 @@
   </a>
 
 </nav>
-{<table id="board_user" class="board">
+<table id="board_points" class="board">
   <thead class="head">
     <tr class="row">
       <th class="cell">PlaceId</th>
@@ -43,6 +44,7 @@
       <th class="cell">Rating</th>
       <th class="cell">Website</th>
       <th class="cell">Type</th>
+      <th class="cell">LatLng</th>
       <th class="cell">delete</th>
     </tr>
   </thead>
@@ -59,6 +61,7 @@
       <td class="cell">{{ this.rating }}</td>
       <td class="cell">{{ this.website }}</td>
       <td class="cell">{{ this.types }}</td>
+      <td class="cell">{{ this.latLng }}</td>
       <td class="cell">
         <a href="/points/delete/{{this._id}}" class="delete btn">X</a>
         {{!-- <button class="delete btn" data-user-id="{{this._id}}">X</button> --}}

@@ -40,6 +40,27 @@ adminRouter.get("/admin-panel/points_manage", (req, res) => {
     });
 });
 
+//To send the points to the create routes page
+adminRouter.get("/admin-panel/routes", (req, res) => {
+  // return res.send("here");
+  Point.find({})
+    .then(points => {
+      // console.log(points, "gogogogogogo");
+
+      // console.log("The received data from the DB: ", points);
+      const data = {
+        points
+      };
+      // console.log(data.points, "data");
+
+      res.render("routes.hbs", { data: data.points });
+    })
+    .catch(err => {
+      console.log("nay", err);
+      console.log("The error while searching points occurred: ", err);
+    });
+});
+
 //to delete points
 adminRouter.get("/points/delete/:id", (req, res) => {
   console.log("blabla");

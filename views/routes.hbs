@@ -1,32 +1,140 @@
-<h4>Routes Page with Routes</h4>
-<nav id="nav_dashboard">
-  <a href="/admin-panel/users" class="link">
-    {{!-- <span class="btn icon" title="Manage user">
-      <i class="fa fa-plus fa-lg"></i>
-      <i class="fa fa-plus fa-user fa-lg"></i>
-    </span>Users --}}
-    Users
-  </a>
-  <a href="/admin-panel/points" class="link">
-    {{!-- <span class="btn icon" title="Manage Points">
-      <i class="fa fa-list fa-lg"></i>
-      <i class="fa fa-users fa-lg"></i>
-    </span> --}}
-    Points
-  </a>
-  <a href="/admin-panel/points_manage" class="link">
-    {{!-- <span class="btn icon" title="Manage Points">
-      <i class="fa fa-list fa-lg"></i>
-      <i class="fa fa-users fa-lg"></i>
-    </span> --}}
-    Points Management
-  </a>
-  <a href="/admin-panel/routes" class="link">
-    {{!-- <span class="btn icon" title="Manage Routes">
-      <i class="fa fa-plus fa-lg"></i>
-      <i class="fab fa-product-hunt fa-lg"></i>
-    </span> --}}
-    Routes
-  </a>
+  <a class="logouttext" href="/logout">Logout</a>
+<html>
+<h2>Create a Route</h2>
 
-</nav>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Waypoints in Directions</title>
+
+</head>
+
+<body>
+  <nav id="nav_dashboard">
+    <a href="/admin-panel/users" class="link">
+      {{!-- <span class="btn icon" title="Manage user">
+        <i class="fa fa-plus fa-lg"></i>
+        <i class="fa fa-plus fa-user fa-lg"></i>
+      </span>Users --}}
+      Users
+    </a>
+    <a href="/admin-panel/points" class="link">
+      {{!-- <span class="btn icon" title="Manage Points">
+        <i class="fa fa-list fa-lg"></i>
+        <i class="fa fa-users fa-lg"></i>
+      </span> --}}
+      Points
+    </a>
+    <a href="/admin-panel/points_manage" class="link">
+      {{!-- <span class="btn icon" title="Manage Points">
+        <i class="fa fa-list fa-lg"></i>
+        <i class="fa fa-users fa-lg"></i>
+      </span> --}}
+      Points Management
+    </a>
+    <a href="/admin-panel/routes" class="link">
+      {{!-- <span class="btn icon" title="Manage Routes">
+        <i class="fa fa-plus fa-lg"></i>
+        <i class="fab fa-product-hunt fa-lg"></i>
+      </span> --}}
+      Routes
+    </a>
+
+  </nav>
+
+
+
+  <div id="map"></div>
+  <div id="right-panel">
+    <div>
+      <b>Start:</b>
+      <select id="start">
+        <option value="Halifax, NS">Halifax, NS</option>
+        {{#each data }}
+        <option value="{{this.latLng}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <br>
+      <b>Waypoints:</b> <br>
+      <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+      <select multiple id="waypoints">
+        {{#each data }}
+        <option value="{{this.latLng}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <br>
+      <b>End:</b>
+      <select id="end">
+        {{#each data }}
+        <option value="{{this.latLng}}">{{this.name}}</option>
+        {{/each}}
+        <option value="Vancouver, BC">Vancouver, BC</option>
+      </select>
+      <br>
+      <input type="submit" id="submit">
+    </div>
+    <div id="directions-panel"></div>
+  </div>
+
+  {{!-- DISPLAYING MAP --}}
+  <script>
+    function initMap() {
+      var directionsService = new google.maps.DirectionsService;
+      var directionsDisplay = new google.maps.DirectionsRenderer;
+      {{!-- var service = new google.maps.places.PlacesService(map); --}}
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: { lat: 48.8606, lng: 2.3376 }
+      });
+      directionsDisplay.setMap(map);
+
+      document.getElementById('submit').addEventListener('click', function () {
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+      });
+    }
+
+    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+      var waypts = [];
+      var checkboxArray = document.getElementById('waypoints');
+      for (var i = 0; i < checkboxArray.length; i++) {
+        if (checkboxArray.options[i].selected) {
+          waypts.push({
+            location: checkboxArray[i].value,
+            stopover: true
+          });
+        }
+      }
+
+      directionsService.route({
+
+        origin: document.getElementById('start').value,
+        destination: document.getElementById('end').value,
+        waypoints: waypts,
+        optimizeWaypoints: true,
+        travelMode: 'WALKING'
+      }, function (response, status) {
+        if (status === 'OK') {
+          directionsDisplay.setDirections(response);
+          var route = response.routes[0];
+          var summaryPanel = document.getElementById('directions-panel');
+          summaryPanel.innerHTML = '';
+          // For each route, display summary information.
+          for (var i = 0; i < route.legs.length; i++) {
+            var routeSegment = i + 1;
+            summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+              '</b><br>';
+            summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+            summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+            summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+          }
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key={{process.env.MYKEY}}&libraries=places&callback=initMap">
+  </script>
+</body>
+
+</html>

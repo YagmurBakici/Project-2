@@ -9,7 +9,8 @@ const pointSchema = new Schema(
     rating: { type: Number },
     types: { type: Array },
     website: { type: String },
-    address_components: { type: Object }
+    address_components: { type: Object },
+    latLng: { type: String }
   }
   //{
   // timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

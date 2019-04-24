@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
 * {
   margin: 0%;
 }
@@ -6,11 +7,10 @@
 body,
 html {
   height: 100%;
-}
-
-body {
+  width: 100%;
   font: 14px "Varela Round", sans-serif;
 }
+
 // ---------------LANDING PAGE BACKGROUND(LOGIN AND SIGNUP)-------
 .container1 {
   background-image: url("../images/p.jpg");
@@ -60,7 +60,9 @@ h3 {
 h2 {
   font-size: 40px;
   margin: 30px;
+  text-align: center;
 }
+
 .login_main {
   max-width: 60%;
   font-size: 17px;
@@ -315,14 +317,104 @@ form label {
 }
 
 // ----------------------------------ADMIN PANEL-----------------------
-.adminPanel {
-  font-size: 30px;
-  font: 14px "Varela Round", sans-serif;
-  color: green;
+nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Varela Round", sans-serif;
+  color: rgb(69, 133, 69);
+  margin-bottom: 10px;
 }
 
 // ----------------------------------- MAP -----------------------------
+#right-panel {
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#right-panel select,
+#right-panel input {
+  font-size: 15px;
+}
+
+#right-panel select {
+  width: 100%;
+}
+
+#right-panel i {
+  font-size: 12px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 60%;
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+#right-panel {
+  margin: 20px;
+  border-width: 2px;
+  width: 20%;
+  height: 400px;
+  float: left;
+  text-align: left;
+  padding-top: 0;
+}
+#directions-panel {  
+  margin-top: 10px;
+  background-color: #ffee77;
+  padding: 10px;
+  overflow: scroll;
+  height: 174px;
+}
+
+
+// --------------TABLES-------------------------
+#board_user{
+  text-align: center;
+  margin: auto;
+}
+
+.board {
+  margin: 30px 0;
+}
+
+.board,
+.board .cell {
+  border: 1px solid darkslategray;
+  border-collapse: collapse;
+}
+.board .head {
+  background: darkslategray;
+  color: white;
+}
+
+.board .cell {
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.board .btn {
+  margin: auto;
+  height: 20px;
+}
+.board .row:nth-child(even) {
+  background: #547d73;
+  color: white;
+}
+
+.board .row-empty {
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */
