@@ -79,4 +79,7 @@ app.use(adminRouter);
 const adminPoints = require("./routes/admin_points");
 app.use(adminPoints);
 
+const adminitineraires = require("./routes/admin_itineraires");
+app.use(adminitineraires);
+
 module.exports = app;

@@ -42,14 +42,39 @@
 
   </nav>
 
+  <form action="/create-route" method="POST" id="form-create">
+    <div class="formsection">
 
+      <h4>Create one New Route:</h4>
+
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" placeholder="Name" required>
+
+      <label for="price">Price:</label>
+      <input id="price" type="text" name="price" placeholder="Price" required>
+
+      <label for="time">Time:</label>
+      <input id="time" type="info" name="time" placeholder="Time" required>
+
+      <label for="distance">Distance:</label>
+      <input id="distance" type="distance" name="distance" placeholder="distance" required>
+
+      <label for="points">Points:</label>
+      <input id="points" type="points" name="points" placeholder="Points" required>
+
+      <label for="info">Info:</label>
+      <input id="info" type="info" name="info" placeholder="Info" required>
+
+      <button class="btns">Create Route</button>
+
+    </div>
+  </form>
 
   <div id="map"></div>
   <div id="right-panel">
     <div>
       <b>Start:</b>
       <select id="start">
-        <option value="Halifax, NS">Halifax, NS</option>
         {{#each data }}
         <option value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}</option>
         {{/each}}
@@ -68,12 +93,12 @@
         {{#each data }}
         <option value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}</option>
         {{/each}}
-        <option value="Vancouver, BC">Vancouver, BC</option>
       </select>
       <br>
-      <input type="submit" id="submit">
+      <input class="btns" type="submit" id="submit">
     </div>
     <div id="directions-panel"></div>
+
   </div>
 
   {{!-- DISPLAYING MAP --}}
@@ -146,6 +171,7 @@
   </script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIbJUg6J8QqqQuMI899bZdrtum8VAZnSc&libraries=places&callback=initMap">
   </script>
+
 </body>
 
 </html>
