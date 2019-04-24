@@ -4,16 +4,12 @@ const Schema = mongoose.Schema;
 
 const pointSchema = new Schema(
   {
-    placeId: { type: String },
+    place_id: { type: String },
     name: { type: String },
-    streetNumber: { type: String },
-    route: { type: String },
-    city: { type: String },
-    country: { type: String },
-    posteCode: { type: String },
     rating: { type: Number },
-    category: { type: Array },
-    website: { type: String }
+    types: { type: Array },
+    website: { type: String },
+    address_components: { type: Object }
   }
   //{
   // timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

@@ -111,9 +111,9 @@
         this.getPlaceInformation(event.placeId, function (placeDetails) {
           console.log("status ok ın ", map)
           console.log("map", placeDetails)
-          const { name, rating } = placeDetails;
+          const { place_id, name, rating, types, website, address_components } = placeDetails;
           const answer = window.prompt("save in db ? (y/n)")
-          if (answer === "y") sendToServer({ name, rating });
+          if (answer === "y") sendToServer({ place_id, name, rating, types, website, address_components });
         });
       }
     };
