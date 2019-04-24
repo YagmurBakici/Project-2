@@ -1,1 +1,73 @@
-<h4>h points management</h4>
+<h4>Points management</h4>
+<nav id="nav_dashboard">
+  <a href="/admin-panel/users" class="link">
+    {{!-- <span class="btn icon" title="Manage user">
+      <i class="fa fa-plus fa-lg"></i>
+      <i class="fa fa-plus fa-user fa-lg"></i>
+    </span>Users --}}
+    Users
+  </a>
+  <a href="/admin-panel/points" class="link">
+    {{!-- <span class="btn icon" title="Manage Points">
+      <i class="fa fa-list fa-lg"></i>
+      <i class="fa fa-users fa-lg"></i>
+    </span> --}}
+    Points
+  </a>
+  <a href="/admin-panel/points_manage" class="link">
+    {{!-- <span class="btn icon" title="Manage Points">
+      <i class="fa fa-list fa-lg"></i>
+      <i class="fa fa-users fa-lg"></i>
+    </span> --}}
+    Points Management
+  </a>
+  <a href="/admin-panel/routes" class="link">
+    {{!-- <span class="btn icon" title="Manage Routes">
+      <i class="fa fa-plus fa-lg"></i>
+      <i class="fab fa-product-hunt fa-lg"></i>
+    </span> --}}
+    Routes
+  </a>
+
+</nav>
+{<table id="board_user" class="board">
+  <thead class="head">
+    <tr class="row">
+      <th class="cell">PlaceId</th>
+      <th class="cell">Name</th>
+      <th class="cell">Street Number</th>
+      <th class="cell">Street</th>
+      <th class="cell">Poste Code</th>
+      <th class="cell">City</th>
+      <th class="cell">Country</th>
+      <th class="cell">Rating</th>
+      <th class="cell">Website</th>
+      <th class="cell">Type</th>
+      <th class="cell">delete</th>
+    </tr>
+  </thead>
+  <tbody class="body">
+    {{#each data }}
+    <tr id="user_{{this._id}}" class="row">
+      <td class="cell">{{ this.place_id }}</td>
+      <td class="cell">{{ this.name }}</td>
+      <td class="cell">{{ this.address_components.0.short_name }}</td>
+      <td class="cell">{{ this.address_components.1.short_name }}</td>
+      <td class="cell">{{ this.address_components.6.short_name }}</td>
+      <td class="cell">{{ this.address_components.2.short_name }}</td>
+      <td class="cell">{{ this.address_components.5.short_name }}</td>
+      <td class="cell">{{ this.rating }}</td>
+      <td class="cell">{{ this.website }}</td>
+      <td class="cell">{{ this.types }}</td>
+      <td class="cell">
+        <a href="/points/delete/{{this._id}}" class="delete btn">X</a>
+        {{!-- <button class="delete btn" data-user-id="{{this._id}}">X</button> --}}
+      </td>
+    </tr>
+    {{else}}
+    <tr class="row">
+      <td colspan="10" class="cell row-empty">no points yet</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
