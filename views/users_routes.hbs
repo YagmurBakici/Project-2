@@ -1,14 +1,24 @@
-<h2>Hello Users this is your routes to choose today:</h2>
+<a class="logouttext" href="/logout">Logout</a>
 
-<div class="card">
-  <div class="card-image">
-    <img src="/images/bagages.jpeg" alt="route1">
+
+
+
+<div class="container2">
+  <div class="app">
+    <h2>Hello Users this is your routes to choose today:</h2>
+    <ul class="hs">
+      {{#each data}}
+      <li class="item">
+        <h4>{{this.name}}</h4>
+        <p>Price: {{this.price}}€</p>
+        <p>Duration: {{this.time}} hours</p>
+        <p>Distance:{{this.distance}}km</p>
+        <p>Places: {{this.points}}</p>
+        <p>Information: {{this.info}} </p>
+        <button class="btns">Buy this route</button>
+      </li>
+      {{/each}}
+
+    </ul>
+    <p>When you buy this route, 5% of it is going to Unicef.</p>
   </div>
-  <div class="card-content">
-    <h3>{{this.name}}</h3>
-    <p>Info:Lorem ipsum dolor sit amet, persecuti dissentiet cum cu. Mel esse meliore detracto ei, qui quem magna
-      te. An liber audiam ocurreret eum, vim eu fastidii periculis. </p>
-    <p>When you buy this route, 5% of it is going to Unicef.</p <p>Price:</p>
-    <button>Buy this route</button>
-  </div>
-</div>

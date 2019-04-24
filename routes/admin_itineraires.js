@@ -45,13 +45,16 @@ adminRouter.get("/users_routes", (req, res) => {
   // return res.send("here");
   Route.find({})
     .then(routes => {
-      // console.log(points, "gogogogogogo");
+      console.log(routes, "gogogogogogo");
 
       // console.log("The received data from the DB: ", points);
 
       // console.log(data.points, "data");
+      const data = {
+        routes
+      };
 
-      res.render("users_routes.hbs", routes);
+      res.render("users_routes.hbs", { data: data.routes });
     })
     .catch(err => {
       console.log("nay", err);
