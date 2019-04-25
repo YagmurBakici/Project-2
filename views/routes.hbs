@@ -76,7 +76,8 @@
       <b>Start:</b>
       <select id="start">
         {{#each data }}
-        <option value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}</option>
+        <option data-point-id="{{this.place_id}}" value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}
+        </option>
         {{/each}}
       </select>
       <br>
@@ -84,14 +85,16 @@
       <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
       <select multiple id="waypoints">
         {{#each data }}
-        <option value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}</option>
+        <option data-point-id="{{this.place_id}}" value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}
+        </option>
         {{/each}}
       </select>
       <br>
       <b>End:</b>
       <select id="end">
         {{#each data }}
-        <option value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}</option>
+        <option data-point-id="{{this.place_id}}" value="{{this.latLng.lat}}, {{this.latLng.lng}}">{{this.name}}
+        </option>
         {{/each}}
       </select>
       <br>
@@ -126,11 +129,24 @@
       const startSelect = document.querySelector("#start option:checked");
       const waypointsSelect = document.querySelectorAll("#waypoints option:checked");
       const endSelect = document.querySelector("#end option:checked");
-
+      const startPointId = startSelect.getAttribute("data-point-id");
+      const endPointId = endSelect.getAttribute("data-point-id");
+      var wayPointsIds = [];
+      waypointsSelect.forEach(point => {
+        wayPointsIds.push(point.getAttribute("data-point-id"));
+      })
       console.log(startSelect);
       console.log(waypointsSelect);
       console.log(endSelect);
+
+      const res = [startPointId, ...wayPointsIds, endPointId];
+      document.getElementById("points").value = res;
+
+      console.log(res);
+
     }
+
+
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       var waypts = [];
