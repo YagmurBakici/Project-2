@@ -1,6 +1,6 @@
 <div class="container1">
 
-  <form action="/signup" method="POST" id="form-container">
+  <form action="/signup" method="POST" id="form-container" enctype="multipart/form-data">
     <div class="formsection">
 
       <h2>Sign Up</h2>
@@ -20,6 +20,9 @@
 
       <label for="password">Password:</label>
       <input id="password" type="password" name="password" placeholder="Create a password" required>
+
+      {{!-- <label for="avatar">Avatar:</label>
+      <input id="avatar" type="file" name="avatarUpload" required> --}}
 
 
       {{#if message}}
