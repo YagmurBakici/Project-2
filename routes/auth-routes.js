@@ -50,8 +50,10 @@ router.post("/signup", (req, res, next) => {
   // const surname = req.body.surname;
   // const password = req.body.password;
   const { username, surname, email, nationality, password } = req.body;
+  console.log(req.body);
   const salt = bcrypt.genSaltSync(bcryptSalt);
-  // const hashPass = bcrypt.hashSync(password, salt);
+  const hashPass = bcrypt.hashSync(password, salt);
+  console.log("herherher");
 
   if (
     username === "" ||
@@ -75,8 +77,8 @@ router.post("/signup", (req, res, next) => {
       console.log(2);
       return;
     }
-    const salt = bcrypt.genSaltSync(bcryptSalt);
-    const hashPass = bcrypt.hashSync(password, salt);
+    // const salt = bcrypt.genSaltSync(bcryptSalt);
+    // const hashPass = bcrypt.hashSync(password, salt);
 
     User.create({
       username,

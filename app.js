@@ -80,7 +80,7 @@ const index = require("./routes/index");
 app.use("/", index);
 
 const authroutes = require("./routes/auth-routes");
-app.use("/", authroutes);
+app.use(authroutes);
 
 const adminRouter = require("./routes/admin_routes");
 app.use(adminRouter);
