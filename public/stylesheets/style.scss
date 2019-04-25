@@ -485,7 +485,8 @@ body {
 }
 .topnav {
   overflow: hidden;
-  background-color: rgba(247, 1, 1, 0.3);
+  background-color: rgb(245, 196, 34);
+
   position: relative;
 }
 .topnav #myLinks {
@@ -511,7 +512,7 @@ body {
   color: black;
 }
 .topnav .selectlink:focus {
-  background-color: rgb(245, 196, 34);
+  background-color: rgb(238, 132, 238);
 }
 .active {
   background-color: yellowgreen;
