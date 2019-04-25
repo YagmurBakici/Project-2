@@ -129,7 +129,7 @@
     };
 
     function sendToServer(placeData) {
-      axios.post("http://localhost:3000/create-point", { placeData })
+      axios.post(`${process.env.PORT}/create-point`, { placeData })
         .then(serverResponse => {
           console.log(serverResponse)
         })

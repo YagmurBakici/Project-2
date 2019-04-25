@@ -10,21 +10,29 @@
 </div>
 
 
-<div class="container3">
+<div class="container2">
+  <div class="app">
 
-  <h2>Hey you seleceted this pretty route</h2>
-  <ul class="choosen">
-    {{#each data}}
-    <li class="usersChoice">
-      <img src="/images/eiffel.jpg" width="200" height="100" alt="Paris">
-      <button class="btns">Start</button>
-      <h4>{{this.name}}</h4>
-      <p> Price: {{this.price}}€</p>
-      <p><span>→ </span>Duration: {{this.time}} hours</p>
-      <p><span>→ </span>Distance:{{this.distance}}km</p>
-      <p><span>→ </span>Places: {{this.points}}</p>
-      <p><span>→ </span>Information: {{this.info}} </p>
-    </li>
-    {{/each}}
-  </ul>
+    <h2>Hey you seleceted this pretty route</h2>
+
+
+    <ul class="choosen">
+      {{#each data}}
+      <li class="usersChoice">
+        <img src="/images/eiffel.jpg" width="200" height="100" alt="Paris">
+        <h4>{{this.name}}</h4>
+        <p> Price: {{this.price}}€</p>
+        <p><span>→ </span>Duration: {{this.time}} hours</p>
+        <p><span>→ </span>Distance:{{this.distance}}km</p>
+        <p><span>→ </span>Places: {{this.points}}</p>
+        <p><span>→ </span>Information: {{this.info}} </p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>
+<a href="/users_choice/{{_id}}" class="btns">DONATE</a>
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIbJUg6J8QqqQuMI899bZdrtum8VAZnSc&libraries=places&callback=initMap">
+</script>

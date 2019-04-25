@@ -242,13 +242,13 @@ section {
   text-align: center;
   position: relative; }
 
-.paris {
+.city {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0; }
-  .paris h5 {
+  .city h5 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -259,7 +259,7 @@ section {
     font-size: calc(1rem + 3vw);
     font: 100px "Varela Round", sans-serif;
     font-size: 3cm; }
-  .paris img {
+  .city img {
     filter: blur(7px);
     -webkit-filter: blur(7px);
     width: 100%;
