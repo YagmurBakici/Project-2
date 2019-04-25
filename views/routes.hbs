@@ -1,4 +1,4 @@
-<a class="logouttext" href="/logout">Logout</a>
+<a class="btns" href="/logout" align="right">Logout</a>
 <html>
 <h2>Create a Route</h2>
 
@@ -103,6 +103,9 @@
 
   {{!-- DISPLAYING MAP --}}
   <script>
+    var midleDistance = 0;
+    var totalDistance = 0;
+    var midlNumberDistance = 0;
     function initMap() {
       var directionsService = new google.maps.DirectionsService;
       var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -162,6 +165,26 @@
             summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
             summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
             summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+
+            //to calculate the distance in the route and send it to the form
+            midleDistance = route.legs[i].distance.text;
+            //console.log(midleDistance, " distancias medias")
+            midlNumberDistance = midleDistance.substring(0, 4);
+            midlNumberDistance = midlNumberDistance.replace(",", ".");
+            midlNumberDistance = Number(midlNumberDistance);
+            //console.log(midlNumberDistance, " distancias medias replace")
+            //console.log(typeof midlNumberDistance)
+            totalDistance += midlNumberDistance;
+            //console.log(totalDistance, " Distancia total");
+            document.getElementById("distance").value = totalDistance;
+
+            //To calculate time to do the route and send it to the form
+            let velocity = 5.3;
+            let routeTime = totalDistance / velocity;
+            routeTime = Math.round(routeTime)
+            document.getElementById("time").value = routeTime;
+
+
           }
         } else {
           window.alert('Directions request failed due to ' + status);

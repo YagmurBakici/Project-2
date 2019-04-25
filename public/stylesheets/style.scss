@@ -2,6 +2,7 @@
 
 * {
   margin: 0%;
+  padding: 0%;
 }
 
 body,
@@ -61,6 +62,15 @@ h2 {
   font-size: 40px;
   margin: 30px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+h4 {
+  font-size: 25px;
+  margin: 30px;
 }
 
 .login_main {
@@ -175,141 +185,57 @@ form label {
 .error-message {
   background: #f02b63;
   box-sizing: border-box;
+  text-align: center;
   color: #fff;
   margin: 20px auto;
   padding: 20px;
-  width: 60%;
+  width: 30%;
 }
 
 // --------------------------------------HOME PAGE ------------------------
 .containerhome {
   width: 100%;
   height: 90vh;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: baseline;
   justify-items: center;
   align-items: center;
 }
-.logouttext {
-  grid-area: 1/8/2/9;
-}
+// .logouttext {
+//   text-align: right;
+//   text-decoration: none;
+//   font-size: 15px;
+//   color: rgb(204, 248, 198);
+//   float: right;
+
+//   width: 4rem;
+//   height: 1.5rem;
+//   border: 1px rgb(255, 255, 255) solid;
+//   position: absolute;
+//   animation: fillSquare 5s linear infinite;
+//   @keyframes fillSquare {
+//     0% {
+//       box-shadow: inset 0 0 0 0 rgba(126, 161, 125, 0.479);
+//     }
+//     100% {
+//       box-shadow: inset 0 -4rem 0 0 rgb(75, 90, 71);
+//     }
+//   }
+// }
+
 .hometext {
   grid-area: 1/1/2/6;
 }
-.place0 {
-  grid-column: 3 / 7;
-  grid-row: 3 / 7;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-  p {
-    text-align: center;
-  }
+
+img {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
 }
-.place1 {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place2 {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place3 {
-  grid-column: 4 /5;
-  grid-row: 8 / 9;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place4 {
-  grid-column: 6 / 7;
-  grid-row: 2 / 3;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place5 {
-  grid-column: 8 / 9;
-  grid-row: 3 / 4;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place6 {
-  grid-column: 3 / 4;
-  grid-row: 7 / 8;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place7 {
-  grid-column: 6 / 7;
-  grid-row: 8 / 9;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place8 {
-  grid-column: 7 / 8;
-  grid-row: 5/ 6;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
-}
-.place9 {
-  grid-column: 1 / 2;
-  grid-row: 8 / 9;
-  width: 100%;
-  height: 100%;
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-  }
+p {
+  text-align: center;
 }
 .imgplace:hover {
   transform: scale(1.5);
@@ -372,7 +298,7 @@ body {
 }
 #directions-panel {
   margin-top: 10px;
-  background-color: #ffee77;
+  background-color: #fde847;
   padding: 10px;
   overflow: scroll;
   height: 174px;
@@ -390,7 +316,7 @@ body {
 
 .board,
 .board .cell {
-  border: 1px solid darkslategray;
+  border: 1px solid rgb(84, 141, 62);
   border-collapse: collapse;
 }
 .board .head {
@@ -451,7 +377,7 @@ body {
 .app {
   width: 90vh;
   height: 667px;
-  background: rgba(186, 247, 171, 0.6);
+  background: rgba(215, 247, 194, 0.4);
   overflow-y: scroll;
 }
 
@@ -460,6 +386,7 @@ body {
   //scroll-snap-align: center;
   padding: calc(var(--gutter) / 2 * 1.5);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -470,6 +397,8 @@ body {
   display: grid;
   place-items: center;
   background-image: url("../images/p.jpg");
+  margin: 0px;
+  padding: 0%;
   height: 100%;
   width: 100%;
   background-position: center;
@@ -477,4 +406,13 @@ body {
   background-size: cover;
 }
 
+//------------------------------USERS CHOICE---------------------------
+.choosen {
+  text-align: justify;
+  justify-content: center;
+  font-size: 18px;
+}
+
+// .userschoice {
+// }
 /*# sourceMappingURL=style.css.map */

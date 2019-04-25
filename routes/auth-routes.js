@@ -11,7 +11,7 @@ router.get("/login", (req, res, next) => {
   res.render("login.hbs");
 });
 
-router.post("/login", (req, res, next) => {
+router.post("/home", (req, res, next) => {
   const { email, password } = req.body;
   User.findOne({ email })
     .then(user => {
@@ -122,8 +122,9 @@ router.get("/admin-panel/points", (req, res, next) => {
 // router.get("/admin-panel/routes", (req, res, next) => {
 //   res.render("routes.hbs");
 // });
-// router.get("/users_routes", (req, res, next) => {
-//   res.render("users_routes.hbs");
+
+// router.get("/users_choice", (req, res, next) => {
+//   res.render("users_choice.hbs");
 // });
 
 router.get("/logout", (req, res, next) => {

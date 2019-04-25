@@ -1,11 +1,10 @@
-<a class="logouttext" href="/logout">Logout</a>
-
-
+<a class="btns" href="/logout">Logout</a>
+<button class="btns"><a href="/home">RETURN</a></button>
 
 
 <div class="container2">
   <div class="app">
-    <h2>Hello Users this is your routes to choose today:</h2>
+    <h2>Hello *User here are your routes to choose:</h2>
     <ul class="hs">
       {{#each data}}
       <li class="item">
@@ -15,7 +14,8 @@
         <p>Distance:{{this.distance}}km</p>
         <p>Places: {{this.points}}</p>
         <p>Information: {{this.info}} </p>
-        <button class="btns">Buy this route</button>
+        {{!-- <button class="btns">Buy this route</button> --}}
+        <a href="/users_choice/{{_id}}" class="btns">Buy this Route</a>
       </li>
       {{/each}}
 

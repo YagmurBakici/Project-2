@@ -62,6 +62,27 @@ adminRouter.get("/users_routes", (req, res) => {
     });
 });
 
+//To send the routes to the display in User page
+adminRouter.get("/users_choice/:id", (req, res) => {
+  // return res.send("here");
+  // console.log(req.params.id);
+
+  Route.find({ _id: req.params.id })
+    .then(routes => {
+      console.log(routes, "choosen");
+
+      const data = {
+        routes
+      };
+
+      res.render("users_choice.hbs", { data: data.routes });
+    })
+    .catch(err => {
+      console.log("Error", err);
+      console.log("The error while searching points occurred: ", err);
+    });
+});
+
 // //to delete points
 // adminRouter.get("/points/delete/:id", (req, res) => {
 //   console.log("blabla");

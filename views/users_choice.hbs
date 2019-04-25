@@ -1,0 +1,22 @@
+<a class="logouttext" href="/logout">Logout</a>
+
+
+
+<div class="container3">
+
+  <h2>Hey you seleceted this pretty route</h2>
+  <ul class="choosen">
+    {{#each data}}
+    <li class="usersChoice">
+      <img src="/images/eiffel.jpg" width="200" height="100" alt="Paris">
+      <button class="btns">Start</button>
+      <h4>{{this.name}}</h4>
+      <p> Price: {{this.price}}€</p>
+      <p><span>→ </span>Duration: {{this.time}} hours</p>
+      <p><span>→ </span>Distance:{{this.distance}}km</p>
+      <p><span>→ </span>Places: {{this.points}}</p>
+      <p><span>→ </span>Information: {{this.info}} </p>
+    </li>
+    {{/each}}
+  </ul>
+</div>
