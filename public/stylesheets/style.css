@@ -158,7 +158,8 @@ form label {
   border-radius: 3px;
   text-shadow: 0px 1px 0px #528009;
   margin: 10px;
-  font: 14px "Varela Round", sans-serif; }
+  font: 14px "Varela Round", sans-serif;
+  text-align: center; }
 
 .btns:hover {
   background-color: #2fe6dc; }
