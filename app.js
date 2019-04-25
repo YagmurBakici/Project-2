@@ -31,6 +31,15 @@ const debug = require("debug")(
 const app = express();
 
 // Middleware Setup
+app.use((req, res, next) => {
+  if (req.path === "/favicon.ico") {
+    console.log("Favicon blocked...");
+    return res.send(
+      "Blocking favicon to not create more sessions... Implement code for handling favicons."
+    );
+  }
+  next();
+});
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
