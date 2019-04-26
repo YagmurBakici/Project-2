@@ -1,0 +1,54 @@
+<a class="btns" href="/logout">Logout</a>
+<h2>Routes management</h2>
+<nav id="nav_dashboard">
+  <a href="/admin-panel/users" class="link">
+    Users
+  </a>
+  <a href="/admin-panel/points" class="link">
+    Points
+  </a>
+  <a href="/admin-panel/points_manage" class="link">
+    Points Manage
+  </a>
+  <a href="/admin-panel/routes" class="link">
+    Routes
+  </a>
+  <a href="/admin-panel/routes_manage" class="link">
+    Routes Manage
+  </a>
+
+</nav>
+<table id="board_routes" class="board">
+  <thead class="head">
+    <tr class="row">
+      <th class="cell">RouteId</th>
+      <th class="cell">Name</th>
+      <th class="cell">Price</th>
+      <th class="cell">Time</th>
+      <th class="cell">Distance</th>
+      <th class="cell">Points</th>
+      <th class="cell">Info</th>
+      <th class="cell">delete</th>
+    </tr>
+  </thead>
+  <tbody class="body">
+    {{#each data }}
+    <tr id="user_{{this._id}}" class="row">
+      <td class="cell">{{ this._id }}</td>
+      <td class="cell">{{ this.name }}</td>
+      <td class="cell">{{ this.price }}</td>
+      <td class="cell">{{ this.time }}</td>
+      <td class="cell">{{ this.distance }}</td>
+      <td class="cell">{{ this.points }}</td>
+      <td class="cell">{{ this.info }}</td>
+      <td class="cell">
+        <a href="/routes/delete/{{this._id}}" class="delete btn">X</a>
+      </td>
+    </tr>
+    {{else}}
+    <tr class="row">
+      <td colspan="10" class="cell row-empty">no routes yet</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -18,27 +18,27 @@ adminRouter.post("/create-route", (req, res) => {
     });
 });
 
-// //To show the routes
-// adminRouter.get("/admin-panel/points_manage", (req, res) => {
-//   // return res.send("here");
+//To show the routes
+adminRouter.get("/admin-panel/routes_manage", (req, res) => {
+  // return res.send("here");
 
-//   Point.find({})
-//     .then(points => {
-//       // console.log(points, "gogogogogogo");
+  Route.find({})
+    .then(routes => {
+      // console.log(points, "gogogogogogo");
 
-//       // console.log("The received data from the DB: ", points);
-//       const data = {
-//         points
-//       };
-//       console.log(data.points, "data");
+      // console.log("The received data from the DB: ", points);
+      const data = {
+        routes
+      };
+      console.log(data.routes, "data");
 
-//       res.render("points_manage.hbs", { data: data.points });
-//     })
-//     .catch(err => {
-//       console.log("nay", err);
-//       console.log("The error while searching points occurred: ", err);
-//     });
-// });
+      res.render("routes_manage.hbs", { data: data.routes });
+    })
+    .catch(err => {
+      console.log("nay", err);
+      console.log("The error while searching routes occurred: ", err);
+    });
+});
 
 //To send the routes to the display routes page
 adminRouter.get("/users_routes", (req, res) => {
@@ -83,16 +83,16 @@ adminRouter.get("/users_choice/:id", (req, res) => {
     });
 });
 
-// //to delete points
-// adminRouter.get("/points/delete/:id", (req, res) => {
-//   console.log("blabla");
-//   Point.findByIdAndDelete(req.params.id)
-//     .then(dbRes => {
-//       res.redirect("/admin-panel/points_manage");
-//     })
-//     .catch(dbErr => {
-//       res.redirect("/points_manage");
-//     });
-// });
+//to delete routes
+adminRouter.get("/routes/delete/:id", (req, res) => {
+  console.log("blabla");
+  Route.findByIdAndDelete(req.params.id)
+    .then(dbRes => {
+      res.redirect("/admin-panel/routes_manage");
+    })
+    .catch(dbErr => {
+      res.redirect("/route_manage");
+    });
+});
 
 module.exports = adminRouter;
