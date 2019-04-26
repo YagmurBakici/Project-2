@@ -16,13 +16,15 @@
       {{#each data}}
       <li class="item">
         <h4>{{this.name}}</h4>
-        <p>Price: {{this.price}}€</p>
-        <p>Duration: {{this.time}} hours</p>
-        <p>Distance:{{this.distance}}km</p>
-        <p>Places: {{this.points}}</p>
-        <p>Information: {{this.info}} </p>
+        <div class="card_content">
+          <p>Price: {{this.price}}€</p>
+          <p>Duration: {{this.time}} hours</p>
+          <p>Distance:{{this.distance}}km</p>
+          <p>Places: {{this.points}}</p>
+          <p>Information: {{this.info}} </p>
+        </div>
         {{!-- <button class="btns">Buy this route</button> --}}
-        <a href="/users_choice/{{_id}}" class="btns">Take this Route</a>
+        <a href="/users_choice/{{_id}}" class="btns">GO!</a>
       </li>
       {{/each}}
 

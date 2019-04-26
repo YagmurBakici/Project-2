@@ -374,7 +374,7 @@ body {
 
 .app {
   max-width: 90vh;
-  height: 625px;
+  height: 568px;
   margin: auto;
   background: rgba(215, 247, 194, 0.4); }
 
@@ -384,7 +384,7 @@ ul {
 .hs > li,
 .item {
   text-align: justify;
-  padding: 40px;
+  padding: 0 40px;
   background: #fff;
   max-width: 7cm;
   border-radius: 8px;
@@ -450,6 +450,9 @@ ul {
 .active {
   background-color: yellowgreen;
   color: white; }
+
+.card_content {
+  height: 160px; }
 
 @media screen and (max-width: 450px) {
   .hs {
