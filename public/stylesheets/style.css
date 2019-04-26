@@ -373,7 +373,7 @@ body {
 
 .app {
   max-width: 90vh;
-  height: 667px;
+  height: 625px;
   margin: auto;
   background: rgba(215, 247, 194, 0.4); }
 
@@ -383,11 +383,11 @@ ul {
 .hs > li,
 .item {
   text-align: justify;
-  padding: 50px;
+  padding: 40px;
   background: #fff;
   max-width: 7cm;
   border-radius: 8px;
-  height: 10cm;
+  height: 9cm;
   width: 9cm; }
 
 .item .btns {
