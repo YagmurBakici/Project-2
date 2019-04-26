@@ -7,7 +7,18 @@ adminRouter.post("/create-route", (req, res) => {
   console.log(req.body);
   const { name, price, time, distance, points, pointsids, info } = req.body;
 
-  Route.create({ name, price, time, distance, points, pointsids, info })
+  var pointsArr = pointsids.split(",");
+  console.log(pointsArr);
+
+  Route.create({
+    name,
+    price,
+    time,
+    distance,
+    points,
+    pointsids: pointsArr,
+    info
+  })
     .then(ok => {
       console.log("db oki");
       res.redirect("/admin-panel");

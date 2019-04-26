@@ -414,6 +414,7 @@ body {
 
 .hs {
   display: grid;
+
   grid-gap: calc(var(--gutter) / 2);
   grid-template-columns: repeat(6, calc(50% - var(--gutter) * 2));
   grid-template-rows: minmax(150px, 1fr);
@@ -424,8 +425,9 @@ body {
   margin-bottom: calc(-0.25 * var(--gutter));
 }
 .app {
-  width: 90vh;
+  max-width: 90vh;
   height: 667px;
+  margin: auto;
   background: rgba(215, 247, 194, 0.4);
 }
 
@@ -435,11 +437,11 @@ body {
   padding: calc(var(--gutter) / 2 * 1.5);
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #fff;
   border-radius: 8px;
+  width: fit-content;
 }
 
 .container2 {

@@ -366,8 +366,9 @@ body {
   margin-bottom: calc(-0.25 * var(--gutter)); }
 
 .app {
-  width: 90vh;
+  max-width: 90vh;
   height: 667px;
+  margin: auto;
   background: rgba(215, 247, 194, 0.4); }
 
 .hs > li,
@@ -375,11 +376,11 @@ body {
   padding: calc(var(--gutter) / 2 * 1.5);
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #fff;
-  border-radius: 8px; }
+  border-radius: 8px;
+  width: fit-content; }
 
 .container2 {
   display: grid;
