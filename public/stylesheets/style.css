@@ -51,22 +51,29 @@ h3 {
   text-shadow: #c2f54c; }
 
 h2 {
-  font-size: 40px;
+  font-size: 24px;
   margin: 30px;
+  color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  font-size: 3vw; }
+  font-size: 3rvw; }
 
 h4 {
-  font-size: 25px;
+  font-size: 15px;
   margin: 30px;
-  border: 2px white solid;
   padding: 8px;
   border-radius: 3px;
+  text-align: center;
   animation: fillSquare 5s linear infinite; }
+
+@keyframes fillSquare {
+  0% {
+    box-shadow: inset 0 0 0 0 rgba(167, 248, 46, 0.521); }
+  100% {
+    box-shadow: inset 0 -4rem 0 0 rgba(234, 255, 228, 0.384); } }
 
 .login_main {
   max-width: 60%;
@@ -80,7 +87,6 @@ h4 {
   align-items: inherit; }
 
 .formsection {
-  color: white;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -163,7 +169,7 @@ form label {
   text-decoration: none;
   border-radius: 3px;
   text-shadow: 0px 1px 0px #528009;
-  margin: 10px;
+  margin: 20px;
   font: 14px "Varela Round", sans-serif;
   text-align: center; }
 
@@ -313,7 +319,7 @@ body {
   margin: auto; }
 
 .board {
-  margin: 30px 0; }
+  margin: 30px auto; }
 
 .board,
 .board .cell {
@@ -371,16 +377,21 @@ body {
   margin: auto;
   background: rgba(215, 247, 194, 0.4); }
 
+ul {
+  list-style-type: none; }
+
 .hs > li,
 .item {
-  padding: calc(var(--gutter) / 2 * 1.5);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  text-align: justify;
+  padding: 50px;
   background: #fff;
+  max-width: 7cm;
   border-radius: 8px;
-  width: fit-content; }
+  height: 10cm;
+  width: 9cm; }
+
+.item .btns {
+  margin-bottom: 0; }
 
 .container2 {
   display: grid;
@@ -438,6 +449,14 @@ body {
 .active {
   background-color: yellowgreen;
   color: white; }
+
+@media screen and (max-width: 450px) {
+  .hs {
+    display: flex; }
+  .item {
+    padding: 0 25vw;
+    width: 100vw;
+    margin: 0 28px; } }
 
 /*# sourceMappingURL=style.css.map */
 

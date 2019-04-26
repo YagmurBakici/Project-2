@@ -85,7 +85,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 app.use(checkloginStatus); // check user connection at each server request
 
 // default value for title local
-app.locals.title = "Express - Generated with IronGenerator";
+app.locals.title = "WanderFull";
 
 const index = require("./routes/index");
 app.use("/", index);
