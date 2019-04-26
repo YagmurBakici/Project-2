@@ -1,4 +1,4 @@
-<a class="logouttext" href="/logout">Logout</a>
+<a class="btns" href="/logout">Logout</a>
 <html>
 <h2>Select Points to add in DB</h2>
 
@@ -111,7 +111,7 @@
             lat: placeDetails.geometry.location.lat(),
             lng: placeDetails.geometry.location.lng()
           };
-          console.log("there are our fucking coordenates ", latLng)
+          console.log("there are our coordenates ", latLng)
           //latLng = JSON.stringify(latLng); 
 
           const { place_id, name, rating, types, website, address_components, } = placeDetails;
@@ -129,7 +129,7 @@
     };
 
     function sendToServer(placeData) {
-      axios.post(`${process.env.PORT}/create-point`, { placeData })
+      axios.post("/create-point", { placeData })
         .then(serverResponse => {
           console.log(serverResponse)
         })

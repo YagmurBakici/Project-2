@@ -66,11 +66,24 @@ h2 {
   justify-content: center;
   align-items: center;
   align-content: center;
+  font-size: 3vw;
 }
 
 h4 {
   font-size: 25px;
   margin: 30px;
+  border: 2px white solid;
+  padding: 8px;
+  border-radius: 3px;
+  animation: fillSquare 5s linear infinite;
+  // @keyframes fillSquare {
+  //   0% {
+  //     box-shadow: inset 0 0 0 0 rgba(167, 248, 46, 0.521);
+  //   }
+  //   100% {
+  //     box-shadow: inset 0 -4rem 0 0 rgba(234, 255, 228, 0.384);
+  //   }
+  //}
 }
 
 .login_main {
@@ -100,7 +113,8 @@ h4 {
 }
 .formsection input {
   margin-top: 10px;
-  width: 30%;
+  width: 35%;
+  min-width: 15em;
 }
 
 form label {
@@ -205,28 +219,7 @@ form label {
   justify-items: center;
   align-items: center;
 }
-.logouttext {
-  margin-left: 0;
-  text-align: right;
-  text-decoration: none;
-  font-size: 15px;
-  color: rgb(204, 248, 198);
-  float: right;
 
-  width: 4rem;
-  height: 1.5rem;
-  border: 1px rgb(255, 255, 255) solid;
-  position: absolute;
-  animation: fillSquare 5s linear infinite;
-  @keyframes fillSquare {
-    0% {
-      box-shadow: inset 0 0 0 0 rgba(126, 161, 125, 0.479);
-    }
-    100% {
-      box-shadow: inset 0 -4rem 0 0 rgb(75, 90, 71);
-    }
-  }
-}
 .imgplace {
   width: 100%;
   max-width: 200px;
@@ -286,11 +279,11 @@ section {
     left: 0;
     font-size: calc(1rem + 3vw);
     font: 100px "Varela Round", sans-serif;
-    font-size: 3cm;
+    font-size: 14vw;
   }
   img {
-    filter: blur(7px);
-    -webkit-filter: blur(7px);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
     width: 100%;
     height: 100vh;
     margin: 0;
@@ -448,6 +441,7 @@ body {
   background: #fff;
   border-radius: 8px;
 }
+
 .container2 {
   display: grid;
   place-items: center;
