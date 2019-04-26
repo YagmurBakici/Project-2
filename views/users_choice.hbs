@@ -25,6 +25,11 @@
         <p><span>→ </span>Distance:{{this.distance}}km</p>
         <p><span>→ </span>Places: {{this.points}}</p>
         <p><span>→ </span>Information: {{this.info}} </p>
+        <ul>
+          {{#each this.pointsIdsInMongo}}
+          <li>{{this.name}}</li>
+          {{/each}}
+        </ul>
         </li>
         {{/each}}
     </ul>
@@ -32,8 +37,3 @@
       class="btns" target="_blank">Donate</a>
   </div>
 </div>
-
-
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIbJUg6J8QqqQuMI899bZdrtum8VAZnSc&libraries=places&callback=initMap">
-</script>

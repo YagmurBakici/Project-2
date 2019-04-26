@@ -5,7 +5,16 @@ const Route = require("../models/schemaRoutes");
 
 adminRouter.post("/create-route", (req, res) => {
   console.log(req.body);
-  const { name, price, time, distance, points, pointsids, info } = req.body;
+  const {
+    name,
+    price,
+    time,
+    distance,
+    points,
+    pointsids,
+    pointsmomgoids,
+    info
+  } = req.body;
 
   var pointsArr = pointsids.split(",");
   console.log(pointsArr);
@@ -17,6 +26,7 @@ adminRouter.post("/create-route", (req, res) => {
     distance,
     points,
     pointsids: pointsArr,
+    pointsIdsInMongo: pointsmomgoids.split(","),
     info
   })
     .then(ok => {
@@ -79,6 +89,7 @@ adminRouter.get("/users_choice/:id", (req, res) => {
   // console.log(req.params.id);
 
   Route.find({ _id: req.params.id })
+    .populate("pointsIdsInMongo")
     .then(routes => {
       console.log(routes, "choosen");
 

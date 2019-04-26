@@ -10,6 +10,12 @@ const routeSchema = new Schema(
     distance: { type: String },
     points: { type: Array },
     pointsids: { type: Array },
+    pointsIdsInMongo: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Point"
+      }
+    ],
     info: { type: String }
   },
   {
