@@ -13,24 +13,23 @@
 <div class="container2">
   <div class="app">
 
-    <h2>Hey you seleceted this pretty route</h2>
+    <h2>Hey {{user.username}}, you seleceted this pretty route!</h2>
 
 
     <ul class="choosen">
       {{#each data}}
-      <li class="usersChoice">
-        <img src="/images/eiffel.jpg" width="200" height="100" alt="Paris">
+      <p class="usersChoice">
         <h4>{{this.name}}</h4>
         <p> Price: {{this.price}}€</p>
         <p><span>→ </span>Duration: {{this.time}} hours</p>
         <p><span>→ </span>Distance:{{this.distance}}km</p>
         <p><span>→ </span>Places: {{this.points}}</p>
         <p><span>→ </span>Information: {{this.info}} </p>
-      </li>
-      {{/each}}
+        </li>
+        {{/each}}
     </ul>
     <a href="https://www.paypal.com/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Ftransfer&state=%2FrequestE"
-      class="btns">Donate</a>
+      class="btns" target="_blank">Donate</a>
   </div>
 </div>
 

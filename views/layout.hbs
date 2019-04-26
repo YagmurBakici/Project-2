@@ -16,9 +16,17 @@
 <body>
 
 
+  {{!-- To see if there is a session and to show the user name --}}
+  {{!-- {{{#unless isLoggedIn}}
+  {{user.username}}
+  {{/unless}}
+
+  {{#if isLoggedIn}}
+  {{user.username}}
+  {{/if}} --}}
+
+
   {{{body}}}
-
-
 
 
   <script src="/javascripts/script.js"></script>

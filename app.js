@@ -68,10 +68,21 @@ app.use(
   })
 );
 
+// Function to know who is connected and pass {{isLoggedIn}} as object with all data of the conected user wherever you want
+// {{isLoggedIn}} ıs the sesion
+// {{user}} are the data
+function checkloginStatus(req, res, next) {
+  res.locals.isLoggedIn = Boolean(req.session.currentUser); // {{isLoggedIn}} in .hbs
+  res.locals.user = req.session.currentUser; // {{user}} in .hbs
+  // console.log(req);
+  next();
+}
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
+app.use(checkloginStatus); // check user connection at each server request
 
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
