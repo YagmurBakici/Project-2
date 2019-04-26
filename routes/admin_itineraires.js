@@ -5,9 +5,9 @@ const Route = require("../models/schemaRoutes");
 
 adminRouter.post("/create-route", (req, res) => {
   console.log(req.body);
-  const { name, price, time, distance, points, info } = req.body;
+  const { name, price, time, distance, points, pointsids, info } = req.body;
 
-  Route.create({ name, price, time, distance, points, info })
+  Route.create({ name, price, time, distance, points, pointsids, info })
     .then(ok => {
       console.log("db oki");
       res.redirect("/admin-panel");

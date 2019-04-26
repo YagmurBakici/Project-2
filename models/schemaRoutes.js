@@ -9,6 +9,7 @@ const routeSchema = new Schema(
     time: { type: String },
     distance: { type: String },
     points: { type: Array },
+    pointsids: { type: Array },
     info: { type: String }
   },
   {

@@ -49,6 +49,9 @@
       <label for="points">Points:</label>
       <input id="points" type="points" name="points" placeholder="Points" required>
 
+      <label for="pointsids">pointsIDs:</label>
+      <input id="pointsids" type="pointsids" name="pointsids" placeholder="pointsids" required>
+
       <label for="info">Info:</label>
       <input id="info" type="info" name="info" placeholder="Info" required>
 
@@ -127,7 +130,7 @@
       console.log(endSelect);
 
       const res = [startPointId, ...wayPointsIds, endPointId];
-      const arrayPoints = res;
+      document.getElementById("pointsids").value = res;
       document.getElementById("points").value = res.length;
 
       console.log(res);
