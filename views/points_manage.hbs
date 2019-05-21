@@ -25,13 +25,10 @@
       <th class="cell">Name</th>
       <th class="cell">Street Number</th>
       <th class="cell">Street</th>
-      <th class="cell">Poste Code</th>
       <th class="cell">City</th>
       <th class="cell">Country</th>
       <th class="cell">Rating</th>
-      <th class="cell">Website</th>
       <th class="cell">Type</th>
-      <th class="cell">LatLng</th>
       <th class="cell">delete</th>
     </tr>
   </thead>
@@ -42,13 +39,10 @@
       <td class="cell">{{ this.name }}</td>
       <td class="cell">{{ this.address_components.0.short_name }}</td>
       <td class="cell">{{ this.address_components.1.short_name }}</td>
-      <td class="cell">{{ this.address_components.6.short_name }}</td>
       <td class="cell">{{ this.address_components.2.short_name }}</td>
       <td class="cell">{{ this.address_components.5.short_name }}</td>
       <td class="cell">{{ this.rating }}</td>
-      <td class="cell">{{ this.website }}</td>
       <td class="cell">{{ this.types }}</td>
-      <td class="cell">{{ this.latLng }}</td>
       <td class="cell">
         <a href="/points/delete/{{this._id}}" class="delete btn">X</a>
         {{!-- <button class="delete btn" data-user-id="{{this._id}}">X</button> --}}
