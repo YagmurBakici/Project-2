@@ -452,16 +452,16 @@ ul {
   // justify-content: center;
   text-align: justify;
   padding: 0 40px;
-  background: #fff;
-  max-width: 7cm;
+  background: rgba(255, 255, 255, 0.788);
+  max-width: 18vw;
   border-radius: 8px;
-  height: 9cm;
-  width: 9cm;
+  height: 45vh;
+  width: 30vw;
 }
 
 .item .btns {
-  margin-bottom: 0;
-  margin-left: 40px;
+  max-width: 10vw;
+  margin: auto;
 }
 
 .container2 {
@@ -476,7 +476,22 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+@media screen and (max-width: 450px) {
+  .item .btns {
+    margin-bottom: 0;
+    margin-left: 40px;
+  }
+  .hs > li,
+  .item {
+    text-align: justify;
+    padding: 0 40px;
+    background: rgba(255, 255, 255, 0.788);
+    max-width: 18vw;
+    border-radius: 8px;
+    height: 28vh;
+    width: 25vw;
+  }
+}
 //------------------------------USERS CHOICE---------------------------
 .choosen {
   text-align: justify;
@@ -538,6 +553,9 @@ ul {
 
 .card_content {
   height: 160px;
+  border: 0.1vh solid yellowgreen;
+  border-radius: 5px;
+  padding: 1vh;
 }
 
 @media screen and (max-width: 450px) {
