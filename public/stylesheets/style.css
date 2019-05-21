@@ -409,23 +409,24 @@ ul {
 
 @media screen and (max-width: 450px) {
   .item .btns {
-    margin-bottom: 0;
-    margin-left: 40px; }
+    margin-top: 7vh;
+    margin-left: 6vh; }
   .hs > li,
   .item {
     text-align: justify;
-    padding: 0 40px;
+    padding: 0 2vw;
     background: rgba(255, 255, 255, 0.788);
-    max-width: 18vw;
+    max-width: 36vw;
     border-radius: 8px;
-    height: 28vh;
-    width: 25vw; } }
+    height: 48vh;
+    width: 63vw; } }
 
 .choosen {
   text-align: justify;
   justify-content: center;
   font-size: 18px;
-  color: white; }
+  color: white;
+  padding: 2vh; }
 
 .mobile-container {
   max-width: 480px;
