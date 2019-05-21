@@ -1,5 +1,6 @@
 <div class="topnav">
-  <a href="/home" class="active"> <img class="logo" src="/images/logo.png" width=23px height=20px alt="logo">Wanderfull</a>
+  <a href="/home" class="active"> <img class="logo" src="/images/logo.png" width=23px height=20px
+      alt="logo">Wanderfull</a>
   <div id="myLinks">
     <a class="selectlink" href="/home">Home</a>
     <a class="selectlink" href="/logout">Logout</a>
@@ -23,7 +24,7 @@
         <p> Price: {{this.price}}€</p>
         <p><span>→ </span>Duration: {{this.time}} hours</p>
         <p><span>→ </span>Distance:{{this.distance}}km</p>
-        <p><span>→ </span>Places: {{this.points}}</p>
+        <p><span>→ </span>Stops: {{this.points.length}}</p>
         <p><span>→ </span>Information: {{this.info}} </p>
         <ul>
           {{#each this.pointsIdsInMongo}}
